@@ -1,7 +1,7 @@
 # Dataset Information:
 An E-commerce company based in New York City sells clothing online. This company has in-store style and clothing advice sessions. Customers can come in to the store and have sessions or meetings with a personal stylist. After that, they can go home and order either through mobile app or website for the clothes they want.
 
-## Probelem Statement:
+## Problem Statement:
 The company cannot decide whether to focus their efforts on the mobile app or website.
 
 ## Attribute Information:
