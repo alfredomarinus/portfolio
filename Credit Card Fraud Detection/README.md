@@ -1,5 +1,5 @@
 # Dataset Information:
-This dataset consists of 28 unknown variables
+This dataset consists of 28 unknown variables, and 3 known variables.
 
 ## Problem Statement:
 We want to detect fraud transactions as many as possible.
