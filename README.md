@@ -1,1 +1,3 @@
-Programming language: Python 3.8.5
+# Data science portfolio by Alfredo Marinus
+
+This portfolio is compilation of projects.
