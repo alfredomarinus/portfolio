@@ -1,1 +1,1 @@
-# Data Science Portfolio by Alfredo Marinus
+# Data Science Portfolio
