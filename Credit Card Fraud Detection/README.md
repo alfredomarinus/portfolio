@@ -1,6 +1,3 @@
-# Dataset Information:
-This dataset consists of 28 unknown variables, and 3 known variables.
-
 ## Problem Statement:
 We want to reduce fraud transactions being misclassified as non-fraud as many as possible. The cost is too high if we fail to do so.
 Any fraud transactions predicted by the model should be verified by the staff to whether they are real fraud or not.
