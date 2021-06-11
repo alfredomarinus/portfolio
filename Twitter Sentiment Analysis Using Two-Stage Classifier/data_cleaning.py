@@ -61,9 +61,6 @@ def data_cleaning(desired_column):
     desired_column = desired_column.apply(website_removal)
     desired_column = desired_column.apply(repeated_chars_removal)
     desired_column = desired_column.apply(start_with_symbol_removal)
-
-    desired_column = desired_column.str.replace("[^a-zA-Z0-9!?.,' ]",'', regex=True)
-
     desired_column = desired_column.apply(repeated_comma_dot_removal)
     desired_column = desired_column.apply(extra_whitespaces_removal)
     return desired_column
