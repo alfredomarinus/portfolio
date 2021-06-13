@@ -30,8 +30,9 @@ def data_cleaning(desired_column):
 
     def website_removal(tweet):
         compiled_1 = re.compile(r'http\S+')
-        compiled_2 = re.compile(r'\S+.com')
         cleaned = re.sub(compiled_1,'',tweet)
+
+        compiled_2 = re.compile(r'\S+.com')
         cleaned = re.sub(compiled_2,'',cleaned)
         return cleaned
 
@@ -40,15 +41,11 @@ def data_cleaning(desired_column):
         cleaned = re.sub(compiled, r'\1\1', tweet)
         return cleaned
 
-    def start_with_symbol_removal(tweet):
-        compiled = re.compile(r"[^a-zA-Z0-9!?' ][a-zA-Z0-9]+")
-        cleaned = re.sub(compiled, '', tweet)
-        return cleaned
-
     def repeated_comma_dot_removal(tweet):
         compiled = re.compile(r'[.]+')
-        compiled = re.compile(r'[,]+')
         cleaned = re.sub(compiled, r'.', tweet)
+
+        compiled = re.compile(r'[,]+')
         cleaned = re.sub(compiled, r',', cleaned)
         return cleaned
 
@@ -61,7 +58,9 @@ def data_cleaning(desired_column):
     desired_column = desired_column.apply(website_removal)
     desired_column = desired_column.apply(repeated_chars_removal)
     desired_column = desired_column.apply(start_with_symbol_removal)
-    desired_column = desired_column.apply(repeated_comma_dot_removal)
+
+    desired_column = desired_column.str.replace(r"[^a-zA-Z'!]",' ',regex=True)
+
     desired_column = desired_column.apply(extra_whitespaces_removal)
     return desired_column
 
@@ -74,6 +73,7 @@ for idx, tweet in enumerate(df['tweet']):
             blanks.append(idx)
     elif type(tweet) == float:
         blanks.append(idx)
+
 df.drop(df.index[blanks],inplace=True)
 
 print('-------- Exporting to CSV file --------')
@@ -101,6 +101,7 @@ for idx, tweet in enumerate(df['tweet']):
             blanks.append(idx)
     elif type(tweet) == float:
         blanks.append(idx)
+
 df.drop(df.index[blanks],inplace=True)
 
 print('-------- Exporting to CSV file --------')
