@@ -15,7 +15,10 @@ from nltk.corpus import stopwords
 from nltk.sentiment import SentimentIntensityAnalyzer
 nlp = spacy.load("en_core_web_md", disable=['parser', 'ner'])
 
-df = pd.read_csv('train.csv',header=None, names=['polarity','tweet_id','date','query','username','tweet'])
+file_path = input('Please enter file path: \n')
+file_name = input('What would you like to name this file?: /n')
+
+df = pd.read_csv(file_path, header=None, names=['polarity','tweet_id','date','query','username','tweet'])
 df['polarity'] = df['polarity'].replace(4,1)
 df.drop_duplicates('tweet_id', keep=False, inplace=True, ignore_index=True)
 df = df.loc[:,['tweet','polarity']]
@@ -77,14 +80,14 @@ for idx, tweet in enumerate(df['tweet']):
 df.drop(df.index[blanks],inplace=True)
 
 print('-------- Exporting to CSV file --------')
-df.to_csv('train_preprocessed.csv',index=False)
+df.to_csv(f'{file_name}_preprocessed.csv',index=False)
 
-print('-------- Implementing VADER lexicon --------')
-df['compound'] = df['tweet'].apply(lambda x: SentimentIntensityAnalyzer().polarity_scores(x)['compound'])
-df = df.loc[:,['compound','tweet','polarity']]
+#print('-------- Implementing VADER lexicon --------')
+#df['compound'] = df['tweet'].apply(lambda x: SentimentIntensityAnalyzer().polarity_scores(x)['compound'])
+#df = df.loc[:,['compound','tweet','polarity']]
 
-print('-------- Exporting to CSV file --------')
-df.to_csv('train_sid.csv',index=False)
+#print('-------- Exporting to CSV file --------')
+#df.to_csv('train_sid.csv',index=False)
 
 print('-------- Applying normalization --------')
 df["tweet"] = df['tweet'].apply(lambda x: ' '.join([token.lemma_.lower() if token.lemma_ != '-PRON-' else token.lower_ for token in nlp(x)]))
@@ -105,5 +108,5 @@ for idx, tweet in enumerate(df['tweet']):
 df.drop(df.index[blanks],inplace=True)
 
 print('-------- Exporting to CSV file --------')
-df.to_csv('train_lemma.csv',index=False)
+df.to_csv(f'{file_name}_lemma.csv',index=False)
 
