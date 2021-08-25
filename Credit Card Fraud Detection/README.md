@@ -9,7 +9,8 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
 - **Amount**: Amount of transactions
 - **Class**	: 1 (Fraud) and 0 (non-Fraud)
 
-The data looks like this.
+
+## Dataset
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
