@@ -222,6 +222,10 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
 </table>
 </div>
 
+## Distribtion of the amount of fraud transactions
+![png](output_0_0.png)
+
+## Result
 <table border="2" class="dataframe">
   <thead>
     <tr style="text-align: right;">
