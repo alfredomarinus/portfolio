@@ -221,8 +221,6 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
   </tbody>
 </table>
 </div>
-<p>
-</p>
 
 ## Distribution of the amount of fraud transactions
 <p align="center">
@@ -231,8 +229,6 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
 
 <p align="center">
   <img src="output_0_0.png" />
-</p>
-<p>
 </p>
 
 ## Results
