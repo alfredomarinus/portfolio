@@ -222,7 +222,7 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
 </table>
 </div>
 
-## Distribtion of the amount of fraud transactions
+## Distribution of the amount of fraud transactions
 <p align="center">
   <img src="output_0_1.png" />
 </p>
@@ -231,8 +231,8 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
   <img src="output_0_0.png" />
 </p>
 
-## Result
-<table border="2" class="dataframe">
+## Results
+<table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
       <th></th>
