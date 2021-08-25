@@ -223,7 +223,6 @@ Fraud cost and monitoring cost are our cost functions and we will try to reduce 
 </div>
 
 ## Distribtion of the amount of fraud transactions
-![png](output_0_0.png)
 <img src="output_0_0.png" alt="Distribution" class="center">
 
 ## Result
