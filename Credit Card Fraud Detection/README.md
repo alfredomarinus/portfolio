@@ -1,7 +1,8 @@
 ## Problem Statement
-We want to reduce fraud transactions being misclassified as non-fraud as many as possible.
+We want to detect fraud transactions as many as possible, and at the same time, we want to reduce false negatives, and false positives.
 1. Any fraud transactions being misclassified as normal will be considered as false negatives. These will lead to fraud cost.
 2. Any transactions (fraud and normal) being classified as fraud will have the staff review the transactions whether they are true fraud or not. Both true positives and false positives will lead to monitoring cost.
+**Cost function**: Fraud cost (false negative) and monitoring cost (true positive and false positive)
 
 ## Attribute Information
 - **Time**	: Number of seconds elapsed between this transaction and the first transaction
