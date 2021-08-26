@@ -1,7 +1,7 @@
 ## Problem Statement
-We want to reduce fraud transactions being misclassified as non-fraud as many as possible. The cost is too high if we fail to do so.
-Any fraud transactions predicted by the model should be verified by the staff to check whether they are real fraud or not.
-Fraud cost and monitoring cost are our cost functions and we will try to reduce it.
+We want to reduce fraud transactions being misclassified as non-fraud as many as possible.
+1. Any fraud transactions being misclassified as normal will be considered as false negatives. These will lead to fraud cost.
+2. Any transactions (fraud and normal) being classified as fraud will have the staff review the transactions whether they are true fraud or not. Both true positives and false positives will lead to monitoring cost.
 
 ## Attribute Information
 - **Time**	: Number of seconds elapsed between this transaction and the first transaction
