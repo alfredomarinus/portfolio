@@ -244,7 +244,7 @@ We want to detect fraud transactions as many as possible, and at the same time, 
       <th>Recall</th>
       <th>Precision</th>
       <th>F1-score</th>
-      <th>Cost function (RM)</th>
+      <th>Cost (RM)</th>
       <th>Time to compute (seconds)</th>
     </tr>
   </thead>
