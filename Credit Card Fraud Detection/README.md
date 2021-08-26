@@ -3,7 +3,7 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 1. Any fraud transactions being misclassified as normal will be considered as false negatives. These will lead to fraud cost.
 2. Any transactions (fraud and normal) being classified as fraud will have the staff review the transactions whether they are true fraud or not. Both true positives and false positives will lead to monitoring cost.
 
-**COST FUNCTION**:  Fraud cost (false negative) and monitoring cost (true positive and false positive)
+**COST FUNCTION**: Fraud cost (false negative) and monitoring cost (true positive and false positive)
 
 ## Attribute Information
 - **Time**	: Number of seconds elapsed between this transaction and the first transaction
