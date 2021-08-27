@@ -229,8 +229,7 @@ We want to detect fraud transactions as many as possible, and at the same time, 
   <img src="output_0_2.png" />
 </p>
 
-This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions is RM 122.21 (fraud cost).
-Assuming the salary of financial staff in Malaysia is RM 6780 and one transaction takes 5 minutes to be checked and one person works for 40 hours per week for 4 weeks, the monitoring cost is RM 3.53 per transaction.
+This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Assuming the salary of financial staff in Malaysia is RM 6780 and one transaction takes 5 minutes to be checked and one person works for 40 hours per week for 4 weeks, the monitoring cost is RM 3.53 per transaction.
 > 5 minutes = 1 transaction
 
 > 1 hour = 12 transactions
