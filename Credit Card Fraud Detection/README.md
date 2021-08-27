@@ -327,6 +327,7 @@ Random Forest will be used as baseline model, and we will tune the hyperparamete
 ## Hyperparamter Tuning
 These are the best hyperparameters for Decision Tree.
 > param_grid = {'max_leaf_nodes': 15, 'min_samples_leaf': 1e05, 'min_impurity_decrease': 8}
+
 By choosing 0.375 as threshold, and limiting our recall score to be not lower than our baseline model's recall score, F1-score increases to 83 %. Because of the recall score increases a bit, we managed to beat the baseline score.
 
 The key takeaway here is even though the percentage difference of cost of our tuned Decision Tree and baseline model is not even 1 %, we still managed to decrease training cost by almost 100 %.
