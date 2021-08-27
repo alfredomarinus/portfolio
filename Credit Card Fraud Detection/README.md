@@ -232,12 +232,12 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 This dataset is heavily imbalanced. Only 0.2 % were fraud transactions.
 
 ## Results
-Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest cost, followed by K-Nearest Neighbors and so on. Notice that the higher the F1-score, the lower the cost. But the problem with Random Forest and K-Nearest Neighbors is they took long time to train.
+Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest __Cost (RM)__, followed by K-Nearest Neighbors and so on. Notice that the higher the F1-score, the lower the cost. But the problem with Random Forest and K-Nearest Neighbors is they took long time to train.
   - Random Forest took 17.6 minutes to train for 5-folds.
   - K-Nearest Neighbors took 1 hour 48 minutes to train for 5-folds.
   - Decision Tree only took 1.6 minutes to train for 5-folds.
 
-Random Forest will be used as baseline model, and we will tune the hyperparameters of Decision Tree and implement threshold analysis to beat the baseline score. Fraud cost costs higher compare to monitoring cost. So, to get a higher F1-score, recall score must never decrease. It either stays the same or increases. Recall score of our baseline model is crucial here.
+Random Forest will be used as baseline model, and we will tune the hyperparameters of Decision Tree and implement threshold analysis to beat the baseline score. Fraud cost costs higher compare to monitoring cost. So, to get a higher F1-score, recall score must never decrease. It either stays the same or increases. Recall score of our baseline is crucial here.
 
 <table border="1" class="dataframe">
   <thead>
@@ -328,6 +328,6 @@ Random Forest will be used as baseline model, and we will tune the hyperparamete
 These are the best hyperparameters for Decision Tree.
 > param_grid = {'max_leaf_nodes': 15, 'min_samples_leaf': 1e05, 'min_impurity_decrease': 8}
 
-By choosing 0.375 as threshold, and limiting our recall score to be not lower than our baseline model's recall score, F1-score increases to 83 %. Because of the recall score increases a bit, we managed to beat the baseline score.
+By choosing 0.375 as threshold, and limiting our recall score to be not lower than our baseline's recall score, F1-score increases to 83 %. Because of the recall score increases a bit, we managed to beat the baseline score.
 
-The key takeaway here is even though the percentage difference of cost of our tuned Decision Tree and baseline model is not even 1 %, we still managed to decrease training cost by almost 100 %.
+The key takeaway here is even though the percentage difference of __Cost (RM)__ of our tuned Decision Tree and baseline is not even 1 %, we still managed to decrease training time (training cost) by almost 100 %.
