@@ -226,12 +226,10 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 
 ## Distribution of the amount of fraud transactions
 <p align="center">
-  <img src="output_0_1.png" />
+  <img src="output_0_2.png" />
 </p>
 
-<p align="center">
-  <img src="output_0_0.png" />
-</p>
+This dataset is heavily imbalanced. Only 0.2 % were fraud transactions.
 
 ## Results
 I built six different models. The models were evaluated using 5-folds cross-validation.
