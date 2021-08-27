@@ -234,6 +234,8 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 </p>
 
 ## Results
+I built six different models. The models were evaluated using 5-folds cross-validation.
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -319,3 +321,5 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 </table>
 </div>
 
+## Discussion
+Random Forest achieved the lowest cost, followed by K-Nearest Neighbors.
