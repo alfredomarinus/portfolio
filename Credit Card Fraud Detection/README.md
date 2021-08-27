@@ -239,7 +239,7 @@ This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The aver
 > RM 6780 / 1920 transactions = RM 3.53 per transaction
 
 ## Results
-Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by K-Nearest Neighbors and so on. Notice that the higher the F1-score, the lower the cost. But the problem with Random Forest and K-Nearest Neighbors is they took long time to train.
+Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by K-Nearest Neighbors and so on. Notice that the higher the F1-score, the lower the cost. But the problem with Random Forest and K-Nearest Neighbors is they a took long time to train.
   - Random Forest took 17.6 minutes to train for 5-folds.
   - K-Nearest Neighbors took 1 hour 48 minutes to train for 5-folds.
   - Decision Tree only took 1.6 minutes to train for 5-folds.
