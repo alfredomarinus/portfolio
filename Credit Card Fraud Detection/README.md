@@ -335,6 +335,7 @@ Random Forest will be used as baseline model, and we will tune the hyperparamete
 These are the best hyperparameters for Decision Tree.
 > param_grid = {'max_leaf_nodes': 15, 'min_samples_leaf': 1e05, 'min_impurity_decrease': 8}
 
+
 At normal threshold (0.5):
 > Recall: 0.782520325203252
 
@@ -342,12 +343,14 @@ At normal threshold (0.5):
 
 > F1-score: 0.8306364617044227
 
+
 At optimal threshold (0.375):
 > Recall: 0.7845528455284553
 
 > Precision: 0.8812785388127854
 
 > F1-score: 0.8301075268817204
+
 
 By choosing 0.375 as threshold, and limiting our recall score to be not lower than our baseline's recall, F1-score increases to 83 %, slightly lower than the baseline's F1-score. But we still managed to beat our baseline because of that higher recall.
 
