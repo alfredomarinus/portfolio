@@ -238,7 +238,7 @@ This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The aver
 
 > RM 6780 / 1920 transactions = RM 3.53 per transaction
 
-## Cross Validation
+## Cross-validation
 Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by Decision Tree and so on. Notice that the higher the F1-score, the lower the cost.
 
 <table border="1" class="dataframe">
@@ -315,8 +315,8 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </table>
 </div>
 
-We will be using Random Forest for model development because it has good score. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
+Random Forest will be used for model development because it has good score. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
 
 ## Model development
-We will implement threshold analysis to this model. With normal threshold (0.5), the model achieved 82 % F1-score with RM 5822.18 total loss.
-With optimal threshold (0.33), the model F1-score only increased by 4 %. The good thing is the total loss was decreased to RM 4523.77, in percentage, 22 %.
+Random Forest was trained using the training dataset, and then, was tested on the test dataset, achieving 82 % F1-score with RM 5822.18 total loss.
+With the implementation of threshold analysis, by choosing 0.33 as the most optimal threshold, the model F1-score increased by 4 %. The good thing is the total loss was decreased to RM 4523.77, in percentage, 22 %.
