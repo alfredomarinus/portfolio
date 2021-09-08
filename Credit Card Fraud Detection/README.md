@@ -239,7 +239,7 @@ This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The aver
 > RM 6780 / 1920 transactions = RM 3.53 per transaction
 
 ## Cross-validation
-Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by Decision Tree and so on. Notice that the higher the F1-score, the lower the cost.
+Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by Decision Tree and so on. Notice that the higher the F1-score, the lower the cost. Random Forest will be used for model development because it has good score.
 
 <table border="1" class="dataframe">
   <thead>
@@ -315,8 +315,10 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </table>
 </div>
 
-Random Forest will be used for model development because it has good score. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
+Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
 
 ## Model development
-Random Forest was trained using the training dataset, and then, was tested on the test dataset, achieving 82 % F1-score with RM 5822.18 total loss.
-With the implementation of threshold analysis, by choosing 0.33 as the most optimal threshold, the model F1-score increased by 4 %. The good thing is the total loss was decreased to RM 4523.77, in percentage, 22 %.
+Random Forest with normal threshold achieved 82 % F1-score with RM 5822.18 total loss.
+With the implementation of threshold analysis, we found that 0.33 has the highest F1-score, which is 86 %.
+Here we need to take fraud cost into account. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
+By using 0.33 as our threshold, we managed to decrease money loss by 22 %.
