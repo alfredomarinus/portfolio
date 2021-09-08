@@ -238,7 +238,7 @@ This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The aver
 
 > RM 6780 / 1920 transactions = RM 3.53 per transaction
 
-## Results
+## Cross Validation
 Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by K-Nearest Neighbors and so on. Notice that the higher the F1-score, the lower the cost. But the problem with Random Forest and K-Nearest Neighbors is they took a long time to train.
   - Random Forest took 17.6 minutes to train for 5-folds.
   - K-Nearest Neighbors took 1 hour 48 minutes to train for 5-folds.
@@ -261,69 +261,58 @@ Six different models were built. The models were evaluated using 5-folds cross-v
   <tbody>
     <tr>
       <th>Random Forest</th>
-      <td>5.4</td>
-      <td>21.4</td>
-      <td>77.0</td>
-      <td>0.782560</td>
-      <td>0.935981</td>
-      <td>0.851794</td>
-      <td>2906.27</td>
-      <td>1057.5</td>
-    </tr>
-    <tr>
-      <th>K-Nearest Neighbors</th>
-      <td>6.8</td>
-      <td>21.8</td>
-      <td>76.6</td>
-      <td>0.778437</td>
-      <td>0.91871</td>
-      <td>0.842548</td>
-      <td>2958.68</td>
-      <td>6494.0</td>
+      <td>3.4</td>
+      <td>14.2</td>
+      <td>51.6</td>
+      <td>0.784289</td>
+      <td>0.938401</td>
+      <td>0.853864</td>
+      <td>1929.60</td>
+      <td>599.6</td>
     </tr>
     <tr>
       <th>Decision Tree</th>
-      <td>22.0</td>
-      <td>22.8</td>
-      <td>75.6</td>
-      <td>0.768275</td>
-      <td>0.776378</td>
-      <td>0.771336</td>
-      <td>3131.04</td>
-      <td>96.0</td>
+      <td>17.2</td>
+      <td>16.8</td>
+      <td>49.0</td>
+      <td>0.744895</td>
+      <td>0.748099</td>
+      <td>0.744129</td>
+      <td>2286.90</td>
+      <td>57.9</td>
     </tr>
     <tr>
       <th>Support Vector Machines</th>
-      <td>4.0</td>
-      <td>34.6</td>
-      <td>63.8</td>
-      <td>0.648341</td>
-      <td>0.943000</td>
-      <td>0.767628</td>
-      <td>4467.88</td>
-      <td>2334.9</td>
+      <td>2.4</td>
+      <td>23.4</td>
+      <td>42.4</td>
+      <td>0.644336</td>
+      <td>0.946674</td>
+      <td>0.765423</td>
+      <td>3017.91</td>
+      <td>1077.0</td>
     </tr>
     <tr>
       <th>Logistic Regression</th>
-      <td>9.2</td>
-      <td>37.8</td>
-      <td>60.6</td>
-      <td>0.615997</td>
-      <td>0.870195</td>
-      <td>0.717379</td>
-      <td>4866.02</td>
-      <td>13.8</td>
+      <td>6.2</td>
+      <td>25.0</td>
+      <td>40.8</td>
+      <td>0.620326</td>
+      <td>0.867202</td>
+      <td>0.721762</td>
+      <td>3221.22</td>
+      <td>8.6</td>
     </tr>
     <tr>
       <th>Naive Bayes</th>
-      <td>1246.2</td>
-      <td>16.8</td>
-      <td>81.6</td>
-      <td>0.829272</td>
-      <td>0.061520</td>
-      <td>0.114525</td>
-      <td>6741.92</td>
-      <td>3.9</td>
+      <td>891.6</td>
+      <td>10.4</td>
+      <td>55.4</td>
+      <td>0.842005</td>
+      <td>0.058520</td>
+      <td>0.109428</td>
+      <td>4615.08</td>
+      <td>2.4</td>
     </tr>
   </tbody>
 </table>
