@@ -318,7 +318,7 @@ Five different models were built. The models were evaluated using 5-folds cross-
 ## Model development
 Random Forest with normal threshold achieved 83 % F1-score with RM 5584.82 total loss.
 <p align="center">
-  <img src="image_2.png" />
+  <img src="image_2.jpg" />
 </p>
 Here is the precision-recall curve. The dot point is where the F1-score the highest.
 With the implementation of threshold analysis, we found that 0.33 has the highest F1-score, which is 86 %.
