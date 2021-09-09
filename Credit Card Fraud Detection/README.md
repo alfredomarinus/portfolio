@@ -226,7 +226,7 @@ We want to detect fraud transactions as many as possible, and at the same time, 
 
 ## Distribution of the amount of fraud transactions
 <p align="center">
-  <img src="output_0_2.png" />
+  <img src="image_1.png" />
 </p>
 
 This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Assuming the salary of financial staff in Malaysia is RM 6780 and one transaction takes 5 minutes to be checked and one person works for 40 hours per week for 4 weeks, the monitoring cost is RM 3.53 per transaction.
@@ -318,7 +318,7 @@ Five different models were built. The models were evaluated using 5-folds cross-
 Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
 
 ## Model development
-Random Forest with normal threshold achieved 82 % F1-score with RM 5822.18 total loss.
+Random Forest with normal threshold achieved 83 % F1-score with RM 5584.82 total loss.
 With the implementation of threshold analysis, we found that 0.33 has the highest F1-score, which is 86 %.
 Here we need to take fraud cost into account. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
-By using 0.33 as our threshold, we managed to decrease money loss by 22 %.
+By using 0.33 as our threshold, we managed to decrease money loss by 17 %.
