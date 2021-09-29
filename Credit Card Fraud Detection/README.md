@@ -233,10 +233,10 @@ Number of rows: 284,807
   <img src="image_1.png" />
 </p>
 
-This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.07.
+This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.25.
 
 ## Cross-validation
-Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by Decision Tree and so on. Notice that the higher the F1-score, the lower the cost. Random Forest will be used for model development because it has good score.
+Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers are prone to stop using our services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -244,69 +244,73 @@ Five different models were built. The models were evaluated using 5-folds cross-
       <th></th>
       <th>False positive</th>
       <th>False negative</th>
-      <th>True positive</th>
       <th>Recall</th>
       <th>Precision</th>
       <th>F1-score</th>
-      <th>Cost (RM)</th>
+      <th>Money loss (RM)</th>
       <th>Time to compute (seconds)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>Random Forest</th>
-      <td>3.4</td>
-      <td>14.2</td>
-      <td>51.6</td>
-      <td>0.784289</td>
-      <td>0.938401</td>
-      <td>0.853864</td>
-      <td>1929.60</td>
-      <td>599.6</td>
+      <td>3</td>
+      <td>14</td>
+      <td>0.784336</td>
+      <td>0.945763</td>
+      <td>0.856868</td>
+      <td>129.50</td>
+      <td>623.8</td>
     </tr>
     <tr>
-      <th>Decision Tree</th>
-      <td>17.2</td>
-      <td>16.8</td>
-      <td>49.0</td>
-      <td>0.744895</td>
-      <td>0.748099</td>
-      <td>0.744129</td>
-      <td>2286.90</td>
-      <td>57.9</td>
+      <th>K-Nearest Neighbors</th>
+      <td>5</td>
+      <td>15</td>
+      <td>0.769091</td>
+      <td>0.919808</td>
+      <td>0.836921</td>
+      <td>138.75</td>
+      <td>2062.5</td>
     </tr>
     <tr>
       <th>Support Vector Machines</th>
-      <td>2.4</td>
-      <td>23.4</td>
-      <td>42.4</td>
+      <td>2</td>
+      <td>23</td>
       <td>0.644336</td>
       <td>0.946674</td>
       <td>0.765423</td>
-      <td>3017.91</td>
-      <td>1077.0</td>
+      <td>212.75</td>
+      <td>1126.9</td>
+    </tr>
+    <tr>
+      <th>Decision Tree</th>
+      <td>18</td>
+      <td>17</td>
+      <td>0.735758</td>
+      <td>0.731769</td>
+      <td>0.732916</td>
+      <td>157.25</td>
+      <td>59.7</td>
     </tr>
     <tr>
       <th>Logistic Regression</th>
-      <td>6.2</td>
-      <td>25.0</td>
-      <td>40.8</td>
+      <td>6</td>
+      <td>25</td>
       <td>0.620326</td>
       <td>0.867202</td>
       <td>0.721762</td>
-      <td>3221.22</td>
-      <td>8.6</td>
+      <td>231.25</td>
+      <td>11.8</td>
     </tr>
     <tr>
       <th>Naive Bayes</th>
-      <td>891.6</td>
-      <td>10.4</td>
-      <td>55.4</td>
+      <td>892</td>
+      <td>10</td>
       <td>0.842005</td>
       <td>0.058520</td>
       <td>0.109428</td>
-      <td>4615.08</td>
-      <td>2.4</td>
+      <td>92.50</td>
+      <td>2.2</td>
     </tr>
   </tbody>
 </table>
