@@ -240,7 +240,7 @@ Number of rows: 284,807
 This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.25.
 
 ## Cross-validation
-This dataset will be separated into training set (70 %) and test set (30 %). Training set will be used for model development while test set will be used for model evaluation.  
+This dataset was separated into training set (70 %) and test set (30 %). Training set was used for model development while test set was used for model evaluation.  
 
 Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers are prone to stop using our services. This can affect our customer life value (CLV).
 
@@ -322,7 +322,7 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </table>
 </div>
 
-## Model development
+## Results
 Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss and 7 potential customer to churn.
 <p align="center">
   <img src="image-2.png" />
