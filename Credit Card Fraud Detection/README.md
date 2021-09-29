@@ -6,6 +6,8 @@ We want to reduce misclassification of fraud and normal transactions.
 **BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
 **ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)
 
+<img src="https://latex.codecogs.com/svg.latex?\Large&space;F1-score=2*\frac{Precision * Recall}{Precision + Recall}" title="F1-score" />
+
 ## Attribute Information
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
 - **V1 - V28** : Unknown variables (may be result of a PCA Dimensionality reduction to protect user identities and sensitive features)
