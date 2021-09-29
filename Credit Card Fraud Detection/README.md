@@ -319,9 +319,6 @@ Five different models were built. The models were evaluated using 5-folds cross-
 ## Model development
 Random Forest with normal threshold achieved 83 % F1-score with RM 5584.82 total loss.
 <p align="center">
-  <img src="image-2.jpg" />
+  <img src="image-2.png" />
 </p>
-Here is the precision-recall curve. The dot point is where the F1-score the highest.
-With the implementation of threshold analysis, we found that 0.33 has the highest F1-score, which is 86 %.
-Here we need to take fraud cost into account. Fraud cost costs higher compare to monitoring cost. So, recall score must never decrease. It either stays the same or increases.
-By using 0.33 as our threshold, we managed to decrease money loss by 17 %.
+Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.
