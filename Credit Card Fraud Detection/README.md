@@ -327,7 +327,6 @@ Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss a
 <p align="center">
   <img src="image-2.png" />
 </p>
-Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
+Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.    
 
-
-Random Forest with new threshold (0.46) achieved 84 % F1-score with RM 370.00 loss, decrease about 11 %.
+Random Forest with new threshold (0.46) achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease.
