@@ -3,14 +3,14 @@ We want to reduce misclassification of fraud and normal transactions.
   - Any fraud transactions being misclassified as normal is considered as false negatives. We will lose money.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
-**BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)
+**BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
 **ADDITIONAL METRICS** : Customer Churn - calculated using false positive (measured by precision)
 
 ## Attribute Information
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
 - **V1 - V28** : Unknown variables (may be result of a PCA Dimensionality reduction to protect user identities and sensitive features)
 - **Amount** : Amount of transactions
-- **Class**	: 1 (Fraud) and 0 (non-Fraud)
+- **Class**	: 1 (Fraud) and 0 (non-Fraud)  
 Number of rows: 284,807
 
 ## Dataset
