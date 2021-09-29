@@ -323,10 +323,10 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </div>
 
 ## Results
-Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss and 7 potential customer to churn.
+Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss and 7 potential customers to churn.
 <p align="center">
   <img src="image-2.png" />
 </p>
-Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.    
+Here is the precision-recall curve. The dot point is where the F1-score the highest. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.    
 
-Random Forest with new threshold (0.46) achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease.
+With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
