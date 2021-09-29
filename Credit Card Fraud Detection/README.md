@@ -240,6 +240,7 @@ Number of rows: 284,807
 This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.25.
 
 ## Cross-validation
+This dataset will be separated into training set (70 %) and test set (30 %). Training set will be used for model development while test set will be used for model evaluation.  
 Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers are prone to stop using our services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
@@ -321,8 +322,9 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </div>
 
 ## Model development
-Random Forest with normal threshold achieved 83 % F1-score with RM 5584.82 total loss.
+Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss.
 <p align="center">
   <img src="image-2.png" />
 </p>
-Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.
+Here is the precision-recall curve. The dot point is where the F1-score the highest. With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
+Random Forest with new threshold (0.46) achieved 84 % F1-score with RM 370.00 loss, decrease about 11 % .
