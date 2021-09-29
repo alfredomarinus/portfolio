@@ -5,9 +5,8 @@ We want to reduce misclassification of fraud and normal transactions.
 
 **BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
 **ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)  
-
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?F1-score=2*\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" title="F1-score=2*\frac{Precision * Recall}{Precision + Recall}" />
+  <img src="https://latex.codecogs.com/svg.image?\mathrm{F1-score=2*\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}}" title="\mathrm{F1-score=2*\frac{Precision * Recall}{Precision + Recall}}" />
 </p>
 
 
