@@ -1,15 +1,17 @@
 ## Problem Statement
-We want to detect fraud transactions as many as possible, and at the same time, we want to reduce false negatives and false positives.
-  - Any fraud transactions being misclassified as normal will be considered as false negatives. These will lead to fraud cost.
-  - Any transactions (fraud and non-fraud) that are classified as fraud will be reviewed by the staff to check whether they are true fraud or not. Those true positives and false positives will lead to monitoring cost.
+We want to reduce misclassification of fraud and normal transactions.
+  - Any fraud transactions being misclassified as normal is considered as false negatives. We will lose money.
+  - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
-**BUSINESS METRICS** : Fraud cost (false negative) and monitoring cost (true positive and false positive)
+**BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)
+**ADDITIONAL METRICS** : Customer Churn - calculated using false positive (measured by precision)
 
 ## Attribute Information
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
 - **V1 - V28** : Unknown variables (may be result of a PCA Dimensionality reduction to protect user identities and sensitive features)
 - **Amount** : Amount of transactions
 - **Class**	: 1 (Fraud) and 0 (non-Fraud)
+Number of rows: 284,807
 
 ## Dataset
 <table border="1" class="dataframe">
