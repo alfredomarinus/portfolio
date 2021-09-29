@@ -230,7 +230,7 @@ Number of rows: 284,807
 
 ## Distribution of the amount of fraud transactions
 <p align="center">
-  <img src="image_1.png" />
+  <img src="image-1.png" />
 </p>
 
 This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.25.
@@ -319,7 +319,7 @@ Five different models were built. The models were evaluated using 5-folds cross-
 ## Model development
 Random Forest with normal threshold achieved 83 % F1-score with RM 5584.82 total loss.
 <p align="center">
-  <img src="image_2.jpg" />
+  <img src="image-2.jpg" />
 </p>
 Here is the precision-recall curve. The dot point is where the F1-score the highest.
 With the implementation of threshold analysis, we found that 0.33 has the highest F1-score, which is 86 %.
