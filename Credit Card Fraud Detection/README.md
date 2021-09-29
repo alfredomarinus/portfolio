@@ -4,7 +4,7 @@ We want to reduce misclassification of fraud and normal transactions.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
 **BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
-**ADDITIONAL METRICS** : Customer Churn - calculated using false positive (measured by precision)
+**ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)
 
 ## Attribute Information
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
@@ -233,14 +233,7 @@ Number of rows: 284,807
   <img src="image_1.png" />
 </p>
 
-This dataset is heavily imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Assuming that one transaction takes 5 minutes to be checked and one person works for 40 hours per week for 4 weeks. Also, assuming that the salary of financial staff in Malaysia is RM 6780. So, the monitoring cost would be RM 3.53 per transaction.
-> 5 minutes = 1 transaction
-
-> 1 hour = 12 transactions
-
-> 4 x 40 hours = 1920 transactions
-
-> RM 6780 / 1920 transactions = RM 3.53 per transaction
+This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.07.
 
 ## Cross-validation
 Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the lowest _Cost (RM)_, followed by Decision Tree and so on. Notice that the higher the F1-score, the lower the cost. Random Forest will be used for model development because it has good score.
