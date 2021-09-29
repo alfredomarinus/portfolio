@@ -4,9 +4,12 @@ We want to reduce misclassification of fraud and normal transactions.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
 **BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
-**ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)
+**ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)  
 
-<img src="https://latex.codecogs.com/svg.latex?\Large&space;F1-score=2*\frac{Precision * Recall}{Precision + Recall}" title="F1-score" />
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.image?F1-score=2*\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}" title="F1-score=2*\frac{Precision * Recall}{Precision + Recall}" />
+</p>
+
 
 ## Attribute Information
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
