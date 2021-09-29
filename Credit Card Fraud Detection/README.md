@@ -3,8 +3,8 @@ We want to reduce misclassification of fraud and normal transactions.
   - Any fraud transactions being misclassified as normal is considered as false negatives. We will lose money.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
-**BUSINESS METRICS** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
-**ADDITIONAL METRICS** : Customer churn - calculated using false positive (measured by precision)  
+**BUSINESS METRIC** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
+**ADDITIONAL METRIC** : Customer churn - calculated using false positive (measured by precision)  
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\mathrm{F1-score=2*\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}}" title="\mathrm{F1-score=2*\frac{Precision * Recall}{Precision + Recall}}" />
 </p>
@@ -328,6 +328,5 @@ Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss a
   <img src="image-2.png" />
 </p>
 Here is the precision-recall curve. The dot point is where the F1-score the highest. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
-
 
 With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
