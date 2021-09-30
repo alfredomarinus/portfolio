@@ -323,5 +323,11 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </div>
 
 ## Model development
-Since Random Forest has a much better performance, we will be using it for further development. Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss. 45 fraud transactions were being misclassified as normal and 7 potential customers have high tendency to churn. To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.    
+Since Random Forest has a much better performance, we will be using it for further development.  
+Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss.
+  - 45 fraud transactions were being misclassified as normal
+  - 7 potential customers have high tendency to churn.  
+
+To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
+
 With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
