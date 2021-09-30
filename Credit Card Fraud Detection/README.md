@@ -17,7 +17,7 @@ We want to reduce misclassification of fraud and normal transactions.
 - **Class**	: 1 (Fraud) and 0 (non-Fraud) 
 
 
-NUMBER OF ROWS: 284,807
+**NUMBER OF ROWS**: 284,807
 
 ## Dataset
 <table border="1" class="dataframe">
