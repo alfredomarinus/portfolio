@@ -242,7 +242,7 @@ This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amou
 ## Cross-validation
 This dataset was separated into training set (70 %) and test set (30 %). Training set was used for model development while test set was used for model evaluation.  
 
-Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers are prone to stop using our services. This can affect our customer life value (CLV).
+Five different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers have tendency to stop using our services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -322,11 +322,6 @@ Five different models were built. The models were evaluated using 5-folds cross-
 </table>
 </div>
 
-## Results
-Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss and 7 potential customers to churn.
-<p align="center">
-  <img src="image-2.png" />
-</p>
-Here is the precision-recall curve. The dot point is where the F1-score the highest. But, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
-
+## Model development
+Since Random Forest has a much better performance, we will be using it for further development. Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss. 45 fraud transactions were being misclassified as normal and 7 potential customers have high tendency to churn. To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.    
 With the implementation of threshold analysis, we found that 0.46 has the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
