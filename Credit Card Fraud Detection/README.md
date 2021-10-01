@@ -234,7 +234,7 @@ We want to reduce misclassification of fraud and normal transactions.
 
 ## Distribution of the amount of fraud transactions
 <p align="center">
-  <img src="image-1.png" />
+  <img src="images/image-1.png" />
 </p>
 
 This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we will be using median instead, which is RM 9.25.
