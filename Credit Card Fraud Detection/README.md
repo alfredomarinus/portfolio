@@ -237,12 +237,12 @@ We want to reduce misclassification of fraud and normal transactions.
   <img src="image-1.png" />
 </p>
 
-This dataset is imbalanced. Only 0.2 % were fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we'll be using median instead, which is RM 9.25.
+This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we will be using median instead, which is RM 9.25.
 
 ## Cross-validation
-This dataset was separated into training set (70 %) and test set (30 %). Training set was used for model development while test set was used for model evaluation.  
+This dataset is separated into training set (70 %) and test set (30 %). Training set is used for model development while test set is used for model evaluation.  
 
-Six different models were built. The models were evaluated using 5-folds cross-validation. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Meaning, more customers have tendency to stop using our services. This can affect our customer life value (CLV).
+We will be using 5-fold cross-validation to estimate the performance of six different machine learning models on unseen data. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -322,14 +322,14 @@ Six different models were built. The models were evaluated using 5-folds cross-v
 </table>
 </div>
 
-## Model development
-Since Random Forest has a much better performance, we will be using it for further development.  
+## Model development and evaluation
+Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
 
 Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss.
-  - 45 fraud transactions were being misclassified as normal.
+  - 45 fraud transactions are misclassified as normal.
   - 7 customers have high tendency to churn.  
 
 To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
 
 ## Implementation of threshold analysis
-We found that 0.46 has the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
+By using 0.46 as the new threshold, the model can achieve the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
