@@ -369,15 +369,13 @@ Since Random Forest has a much better performance, we will be using it for furth
 
 Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss.
   - 43 fraud transactions are misclassified as normal.
-  - 7 customers have high tendency to churn.  
-
-To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
+  - 7 customers high tendency to churn.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
-'max_depth': None ---> 10  
-'max_features': 'auto' ---> 0.7  
-'min_samples_split': 2 ---> 6  
-'n_estimators': 100 ---> 262  
+max_depth: None ---> 10  
+max_features: 'auto' ---> 0.7  
+min_samples_split: 2 ---> 6  
+n_estimators: 100 ---> 262  
 
 ### 5. Tune the model
 Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss.
@@ -385,6 +383,15 @@ Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss.
   - 7 customers have high tendency to churn.  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
+We should take precision-recall trade-off into account if we want to change the threshold. F1-score can increase in four different scenarios:
+  - Recall increass, precision decreases (1)
+  - Recall decreass, precision increases (2)
+  - Recall increass, precision stays the same (3)
+  - Recall stays the same, precision increases (4)  
+
+Options 4 and 5 will be our approaches to tuning the threshold of this model.  
+
 Random Forest with new threshold achieved 85.9 % F1-score with RM 323.75 loss.
   - 35 fraud transactions are misclassified as normal.
-  - 7 customers have high tendency to churn.  
+  - 7 customers have high tendency to churn.
+  - 19 % decrease in money loss (RM 397.75 ---> RM 323.75).
