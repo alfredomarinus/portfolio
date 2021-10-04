@@ -241,10 +241,16 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 
 ## MODEL DEVELOPMENT
 ### 1. Model preparation
-This dataset is separated into training set (70 %) and test set (30 %). Training set is used for model development while test set is used for model evaluation. The training set will be used on six different models to find the best model using cross-validation. F1-score is our main metric and since F1-score is derived from precision and recall, we will also use those two metrics. We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn.  
+  - This dataset is separated into training set (70 %) and test set (30 %).
+  - Training set is used for model development while test set is used for model evaluation.
+  - The training set will be used on six different models to find the best model using cross-validation technique.
+  - F1-score is our main metric and since F1-score is derived from precision and recall, we will also use those two metrics.
+  - We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn.  
 
 ### 2. Cross-validation
-5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
+  - 5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data.
+  - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
+  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -334,10 +340,22 @@ Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss
 To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
 
 ### 4. Hyperparameter optimization
+{'max_depth': None,
+ 'max_features': 'auto',
+ 'min_samples_split': 2,
+ 'n_estimators': 100}  
 
+{'max_depth': 10,
+ 'max_features': 0.7,
+ 'min_samples_split': 6,
+ 'n_estimators': 262}
 
 ### 5. Tune the model
-
+Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss.
+  - 40 fraud transactions are misclassified as normal.
+  - 7 customers have high tendency to churn.  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
-By using 0.46 as the new threshold, the model can achieve the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
+Random Forest with new threshold achieved 85.9 % F1-score with RM 323.75 loss.
+  - 35 fraud transactions are misclassified as normal.
+  - 7 customers have high tendency to churn.  
