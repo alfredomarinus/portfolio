@@ -228,6 +228,40 @@ We want to reduce misclassification of fraud and normal transactions.
       <td>69.99</td>
       <td>0</td>
     </tr>
+	<tr>
+      <th>5</th>
+      <td>2.0</td>
+      <td>-0.425966</td>
+      <td>0.960523</td>
+      <td>1.141109</td>
+      <td>-0.168252</td>
+      <td>0.420987</td>
+      <td>-0.029728</td>
+      <td>0.476201</td>
+      <td>0.260314</td>
+      <td>-0.568671</td>
+      <td>-0.371407</td>
+      <td>1.341262</td>
+      <td>0.359894</td>
+      <td>-0.358091</td>
+      <td>-0.137134</td>
+      <td>0.517617</td>
+      <td>0.401726</td>
+      <td>-0.058133</td>
+      <td>0.068653</td>
+      <td>-0.033194</td>
+      <td>0.084968</td>
+      <td>-0.208254</td>
+      <td>-0.559825</td>
+      <td>-0.026398</td>
+      <td>-0.371427</td>
+      <td>-0.232794</td>
+      <td>0.105915</td>
+      <td>0.253844</td>
+      <td>0.081080</td>
+      <td>3.67</td>
+      <td>0</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -245,12 +279,12 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
   - Training set is used for model development while test set is used for model evaluation.
   - The training set will be used on six different models to find the best model using cross-validation technique.
   - F1-score is our main metric and since F1-score is derived from precision and recall, we will also use those two metrics.
-  - We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn.  
+  - We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn, respectively.  
 
 ### 2. Cross-validation
   - 5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data.
   - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
-  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
+  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).  
 
 <table border="1" class="dataframe">
   <thead>
