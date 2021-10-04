@@ -286,6 +286,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
   - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
   - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).  
 
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
