@@ -1,4 +1,4 @@
-## Problem Statement
+## PROBLEM STATEMENT
 We want to reduce misclassification of fraud and normal transactions.
   - Any fraud transactions being misclassified as normal is considered as false negatives. We will lose money.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
@@ -10,16 +10,16 @@ We want to reduce misclassification of fraud and normal transactions.
 </p>
 
 
-## Attribute Information
+## ATTRIBUTE INFORMATION
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
 - **V1 - V28** : Unknown variables (may be result of a PCA Dimensionality reduction to protect user identities and sensitive features)
 - **Amount** : Amount of transactions
-- **Class**	: 1 (Fraud) and 0 (non-Fraud) 
+- **Class**	: 1 (Fraud) and 0 (Normal) 
 
 
 **NUMBER OF ROWS**: 284,807
 
-## Dataset
+## DATASET
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -232,17 +232,19 @@ We want to reduce misclassification of fraud and normal transactions.
 </table>
 </div>
 
-## Distribution of the amount of fraud transactions
+## DISTRIBUTION OF AMOUNT OF FRAUD TRANSACTIONS
 <p align="center">
   <img src="images/image-1.png" />
 </p>
 
 This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we will be using median instead, which is RM 9.25.
 
-## Cross-validation
-This dataset is separated into training set (70 %) and test set (30 %). Training set is used for model development while test set is used for model evaluation.  
+## MODEL DEVELOPMENT
+### 1. Model preparation
+This dataset is separated into training set (70 %) and test set (30 %). Training set is used for model development while test set is used for model evaluation. The training set will be used on six different models to find the best model using cross-validation. F1-score is our main metric and since F1-score is derived from precision and recall, we will also use those two metrics. We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn.  
 
-We will be using 5-fold cross-validation to estimate the performance of six different machine learning models on unseen data. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
+### 2. Cross-validation
+5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data. Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors and so on. Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. More customers have high tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -322,14 +324,20 @@ We will be using 5-fold cross-validation to estimate the performance of six diff
 </table>
 </div>
 
-## Model development and evaluation
+### 3. Model training and evaluation
 Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
 
-Random Forest with normal threshold achieved 82 % F1-score with RM 416.25 loss.
-  - 45 fraud transactions are misclassified as normal.
+Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss.
+  - 43 fraud transactions are misclassified as normal.
   - 7 customers have high tendency to churn.  
 
 To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
 
-## Implementation of threshold analysis
+### 4. Hyperparameter optimization
+
+
+### 5. Tune the model
+
+
+## IMPLEMENTATION OF THRESHOLD ANALYSIS
 By using 0.46 as the new threshold, the model can achieve the highest F1-score. Random Forest with new threshold achieved 84 % F1-score with RM 370.00 loss, about 11 % decrease, and the same number of potential customers to churn, which is 7.
