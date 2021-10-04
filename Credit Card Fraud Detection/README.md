@@ -285,8 +285,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
   - 5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data.
   - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
   - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).  
-
-
+  
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -364,7 +363,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
   </tbody>
 </table>
 </div>
-
+  
 ### 3. Model training and evaluation
 Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
 
@@ -374,16 +373,11 @@ Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss
 
 To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
 
-### 4. Hyperparameter optimization
-{'max_depth': None,
- 'max_features': 'auto',
- 'min_samples_split': 2,
- 'n_estimators': 100}  
-
-{'max_depth': 10,
- 'max_features': 0.7,
- 'min_samples_split': 6,
- 'n_estimators': 262}
+### 4. Hyperparameter tuning using Bayesian Optimization
+'max_depth': None ---> 10
+'max_features': 'auto' ---> 0.7
+'min_samples_split': 2 ---> 6
+'n_estimators': 100 ---> 262  
 
 ### 5. Tune the model
 Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss.
