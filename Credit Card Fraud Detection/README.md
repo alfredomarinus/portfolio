@@ -268,7 +268,7 @@ We want to reduce misclassification of fraud and normal transactions.
 
 ## DISTRIBUTION OF AMOUNT OF FRAUD TRANSACTIONS
 <p align="center">
-  <img src="images/image-1.png" />
+  <img src="images/image-1.png"/>
 </p>
 
 This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we will be using median instead, which is RM 9.25.
@@ -284,8 +284,8 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 ### 2. Cross-validation
   - 5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data.
   - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
-  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).  
-  
+  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).
+
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -362,7 +362,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
     </tr>
   </tbody>
 </table>
-</div>
+</div>  
   
 ### 3. Model training and evaluation
 Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
@@ -374,9 +374,9 @@ Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss
 To improve this model, we have to make sure both recall and precision do not decrease. It either increases or stays the same.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
-'max_depth': None ---> 10
-'max_features': 'auto' ---> 0.7
-'min_samples_split': 2 ---> 6
+'max_depth': None ---> 10  
+'max_features': 'auto' ---> 0.7  
+'min_samples_split': 2 ---> 6  
 'n_estimators': 100 ---> 262  
 
 ### 5. Tune the model
