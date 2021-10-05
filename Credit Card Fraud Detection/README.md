@@ -375,9 +375,9 @@ None ---> 10 (max_depth)
 2 ---> 6 (min_samples_split)  
 100 ---> 262 (n_estimators)  
 
-### 5. Tune the model
-Tuned Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal while 7 customers have tendency to churn.
-  - 7 % decrease in money loss (RM 397.75 ---> RM 370.00).  
+### 5. Model training and evaluation (tuned)
+Tuned Random Forest with normal threshold (0.5) achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal while 7 customers have tendency to churn.
+  - 7 % decrease in money loss (RM 397.75 ---> RM 370.00)  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
 Precision-recall trade-off should be taken into account if we want to change the threshold. F1-score can increase in four different scenarios:
@@ -389,4 +389,4 @@ Precision-recall trade-off should be taken into account if we want to change the
 Options 3 and 4 will be our approaches to tuning the threshold of this model.  
 
 Tuned Random Forest with new threshold (0.46) achieved 85.9 % F1-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal while 7 customers have tendency to churn.
-  - 19 % decrease in money loss (RM 397.75 ---> RM 323.75).
+  - 19 % decrease in money loss (RM 397.75 ---> RM 323.75)
