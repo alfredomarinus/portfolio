@@ -271,20 +271,20 @@ We want to reduce misclassification of fraud and normal transactions.
   <img src="images/image-1.png"/>
 </p>
 
-This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we will be using median instead, which is RM 9.25.
+This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amount of fraud transactions (fraud cost) is RM 122.21. Since the amount of fraud transactions is heavily skewed, we used median instead, which is RM 9.25.
 
 ## MODEL DEVELOPMENT
 ### 1. Model preparation
-  - This dataset is separated into training set (70 %) and test set (30 %).
-  - Training set is used for model development while test set is used for model evaluation.
-  - The training set will be used on six different models to find the best model using cross-validation technique.
-  - F1-score is our main metric and since F1-score is derived from precision and recall, we will also use those two metrics.
-  - We also will be using false negatives and false positives to calculate fraud cost and number of customers with potential to churn, respectively.  
+  - This dataset was separated into training set (70 %) and test set (30 %).
+  - Training set will be used for model development while test set will be used for model evaluation.
+  - Six different models were built and cross-validation technique will be applied along with the training set.
+  - F1-score will be our main metric and since F1-score is derived from precision and recall, those two metrics are also needed.
+  - We will also need false negatives and false positives to calculate fraud cost and number of customers with potential to churn, respectively.  
 
 ### 2. Cross-validation
-  - 5-fold cross-validation is done to estimate the performance of six different machine learning models on unseen data.
+  - 5-fold cross-validation was done to estimate the performance of six different machine learning models on unseen data.
   - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
-  - Naive Bayes has the least money loss, but it could not compensate with its high number of false positive. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).
+  - Naive Bayes had the least money loss, but it could not compensate with its high number of false positives. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
   <thead>
@@ -367,31 +367,26 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 ### 3. Model training and evaluation
 Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
 
-Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss.
-  - 43 fraud transactions are misclassified as normal.
-  - 7 customers high tendency to churn.  
+Random Forest with normal threshold achieved 82.8 % F1-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal while 7 customers have tendency to churn.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
-max_depth: None ---> 10  
-max_features: 'auto' ---> 0.7  
-min_samples_split: 2 ---> 6  
-n_estimators: 100 ---> 262  
+None ---> 10 (max_depth)  
+'auto' ---> 0.7 (max_features)  
+2 ---> 6 (min_samples_split)  
+100 ---> 262 (n_estimators)  
 
 ### 5. Tune the model
-Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss.
-  - 40 fraud transactions are misclassified as normal.
-  - 7 customers have high tendency to churn.  
+Random Forest with normal threshold achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal while 7 customers have tendency to churn.
+  - 7 % decrease in money loss (RM 397.75 ---> RM 370.00).  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
-We should take precision-recall trade-off into account if we want to change the threshold. F1-score can increase in four different scenarios:
+Precision-recall trade-off should be taken into account if we want to change the threshold. F1-score can increase in four different scenarios:
   - Recall increass, precision decreases (1)
   - Recall decreass, precision increases (2)
   - Recall increass, precision stays the same (3)
   - Recall stays the same, precision increases (4)  
 
-Options 4 and 5 will be our approaches to tuning the threshold of this model.  
+Options 3 and 4 will be our approaches to tuning the threshold of this model.  
 
-Random Forest with new threshold achieved 85.9 % F1-score with RM 323.75 loss.
-  - 35 fraud transactions are misclassified as normal.
-  - 7 customers have high tendency to churn.
+Random Forest with new threshold (0.46) achieved 85.9 % F1-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal while 7 customers have tendency to churn.
   - 19 % decrease in money loss (RM 397.75 ---> RM 323.75).
