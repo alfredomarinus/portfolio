@@ -364,10 +364,10 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 </table>
 </div>  
   
-### 3. Model training and evaluation
-Since Random Forest has a much better performance, we will be using it for further development. We will train it using the training set and evaluate it using the test set.  
+### 3. Model training and evaluation (baseline)
+Since Random Forest has a much better performance, we used it for further development. We trained it using the training set and evaluated it using the test set.  
 
-Random Forest with normal threshold (0.5) achieved 82.8 % F1-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal while 7 customers have tendency to churn.  
+Random Forest with normal threshold (0.5) achieved 82.8 % F1-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal and 7 customers have tendency to churn.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
 None ---> 10 (max_depth)  
@@ -376,7 +376,7 @@ None ---> 10 (max_depth)
 100 ---> 262 (n_estimators)  
 
 ### 5. Model training and evaluation (tuned)
-Tuned Random Forest with normal threshold (0.5) achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal while 7 customers have tendency to churn.
+Tuned Random Forest with normal threshold (0.5) achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal and 7 customers have tendency to churn.
   - 7 % decrease in money loss (RM 397.75 ---> RM 370.00)  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
@@ -386,7 +386,7 @@ Precision-recall trade-off should be taken into account if we want to change the
   - Recall increass, precision stays the same (3)
   - Recall stays the same, precision increases (4)  
 
-Options 3 and 4 will be our approaches to tuning the threshold of this model.  
+Options 3 and 4 were our approaches to tuning the threshold of this model.  
 
-Tuned Random Forest with new threshold (0.46) achieved 85.9 % F1-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal while 7 customers have tendency to churn.
+Tuned Random Forest with new threshold (0.46) achieved 85.9 % F1-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal and 7 customers have tendency to churn.
   - 19 % decrease in money loss (RM 397.75 ---> RM 323.75)
