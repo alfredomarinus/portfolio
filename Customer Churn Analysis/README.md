@@ -1,11 +1,28 @@
-# Dataset Information:
-The dataset consists of six different csv files of Uber raw data.
+## PROBLEM STATEMENT
 
-## Problem Statement:
-What day of the week has the most number of trips? What are the peak hours? What is the trend of trips number from month to month? Which base type has the most number of trips?
 
-## Attribute Information:
-- **Date/Time**: The date and time of the Uber trips.
-- **Lat**: Latitude of the Uber trips.
-- **Lon**: Longitude of the Uber trips.
-- **Base**: TLC base company code affiliated with the Uber trips.
+## ATTRIBUTE INFORMATION
+- **RowNumber**: Row Numbers from 1 to 10000
+- **CustomerId**: Unique Ids for bank customer identification
+- **Surname**: Customer's last name
+- **CreditScore**: Credit score of the customer
+- **Geography**: The country from which the customer belongs
+- **Gender**: Male or Female
+- **Age**: Age of the customer
+- **Tenure**: Number of years for which the customer has been with the bank
+- **Balance**: Bank balance of the customer
+- **NumOfProducts**: Number of bank products the customer is utilising
+- **HasCrCard**: Binary Flag for whether the customer holds a credit card with the bank or not
+- **IsActiveMember**: Binary Flag for whether the customer is an active member with the bank or not
+- **EstimatedSalary**: Estimated salary of the customer in Dollars
+- **Exited**: Binary flag 1 if the customer closed account with bank and 0 if the customer is retained  
+
+
+**NUMBER OF ROWS**: 10,000
+
+## DATASET
+
+
+
+
+
