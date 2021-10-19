@@ -1,5 +1,9 @@
 ## PROBLEM STATEMENT
-
+We want to identify customers with high probability to churn.
+  - High risk customer if churn probability is greater than or equal to 80 %
+  - Medium risk customer if churn probability is between 60 % and 79 %
+  - Low risk customer if churn probability is less than 60 %
+We also want to know features that contribute to this churn.  
 
 ## ATTRIBUTE INFORMATION
 - **RowNumber**: Row Numbers from 1 to 10000
