@@ -6,7 +6,7 @@ We want to reduce misclassification of fraud and normal transactions.
 **BUSINESS METRIC** : Money loss (fraud cost) - calculated using false negative (measured by recall)  
 **ADDITIONAL METRIC** : Customer churn - calculated using false positive (measured by precision)  
 <p align="center">
-  <img src="https://latex.codecogs.com/svg.image?\mathrm{F1-score=2*\frac{Precision&space;*&space;Recall}{Precision&space;&plus;&space;Recall}}" title="\mathrm{F1-score=2*\frac{Precision * Recall}{Precision + Recall}}" />
+  <img src="https://latex.codecogs.com/svg.image?\mathrm{F2-score=5*\frac{Precision&space;*&space;Recall}{4*Precision&space;&plus;&space;Recall}}" title="\mathrm{F2-score=5*\frac{Precision * Recall}{4*Precision + Recall}}" />
 </p>
 
 
@@ -278,12 +278,12 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
   - This dataset was separated into training set (70 %) and test set (30 %).
   - Training set will be used for model development while test set will be used for model evaluation.
   - Six different models were built and cross-validation technique will be applied along with the training set.
-  - F1-score will be our main metric and since F1-score is derived from precision and recall, those two metrics are also needed.
+  - F2-score will be our main metric and since F2-score is derived from precision and recall, those two metrics are also needed.
   - We will also need false negatives and false positives to calculate fraud cost and number of customers with potential to churn, respectively.  
 
 ### 2. Cross-validation
   - 5-fold cross-validation was done to estimate the performance of six different machine learning models on unseen data.
-  - Random Forest achieved the highest F1-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
+  - Random Forest achieved the highest F2-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
   - Naive Bayes had the least money loss, but it could not compensate with its high number of false positives. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
@@ -295,6 +295,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <th>Recall</th>
       <th>Precision</th>
       <th>F1-score</th>
+	  <th>F2-score</th>
       <th>Money loss (RM)</th>
       <th>Time to compute (seconds)</th>
     </tr>
@@ -307,6 +308,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <td>0.784336</td>
       <td>0.945763</td>
       <td>0.856868</td>
+	  <td>0.807474</td>
       <td>129.50</td>
       <td>623.8</td>
     </tr>
@@ -317,8 +319,20 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <td>0.769091</td>
       <td>0.919808</td>
       <td>0.836921</td>
+	  <td>0.794706</td>
       <td>138.75</td>
       <td>2062.5</td>
+    </tr>
+	<tr>
+      <th>Decision Tree</th>
+      <td>18</td>
+      <td>17</td>
+      <td>0.735758</td>
+      <td>0.731769</td>
+      <td>0.732916</td>
+	  <td>0.755924</td>
+      <td>157.25</td>
+      <td>59.7</td>
     </tr>
     <tr>
       <th>Support Vector Machines</th>
@@ -327,18 +341,9 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <td>0.644336</td>
       <td>0.946674</td>
       <td>0.765423</td>
+	  <td>0.687665</td>
       <td>212.75</td>
       <td>1126.9</td>
-    </tr>
-    <tr>
-      <th>Decision Tree</th>
-      <td>18</td>
-      <td>17</td>
-      <td>0.735758</td>
-      <td>0.731769</td>
-      <td>0.732916</td>
-      <td>157.25</td>
-      <td>59.7</td>
     </tr>
     <tr>
       <th>Logistic Regression</th>
@@ -347,6 +352,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <td>0.620326</td>
       <td>0.867202</td>
       <td>0.721762</td>
+	  <td>0.657042</td>
       <td>231.25</td>
       <td>11.8</td>
     </tr>
@@ -357,6 +363,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
       <td>0.842005</td>
       <td>0.058520</td>
       <td>0.109428</td>
+	  <td>0.228914</td>
       <td>92.50</td>
       <td>2.2</td>
     </tr>
@@ -367,7 +374,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 ### 3. Model training and evaluation (baseline)
 Since Random Forest has a much better performance, we used it for further development. We trained it using the training set and evaluated it using the test set.  
 
-Random Forest with normal threshold (0.5) achieved 82.8 % F1-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal and 7 customers have tendency to churn.  
+Random Forest with normal threshold (0.5) achieved 77.0 % F2-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal and 7 customers have tendency to churn.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
 None ---> 10 (max_depth)  
@@ -376,11 +383,11 @@ None ---> 10 (max_depth)
 100 ---> 262 (n_estimators)  
 
 ### 5. Model training and evaluation (tuned)
-Tuned Random Forest with normal threshold (0.5) achieved 84 % F1-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal and 7 customers have tendency to churn.
+Tuned Random Forest with normal threshold (0.5) achieved 78.6 % F2-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal and 7 customers have tendency to churn.
   - 7 % decrease in money loss (RM 397.75 ---> RM 370.00)  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
-Precision-recall trade-off should be taken into account if we want to change the threshold. F1-score can increase in four different scenarios:
+Precision-recall trade-off should be taken into account if we want to change the threshold. F2-score can increase in four different scenarios:
   - Recall increass, precision decreases (1)
   - Recall decreass, precision increases (2)
   - Recall increass, precision stays the same (3)
@@ -388,5 +395,5 @@ Precision-recall trade-off should be taken into account if we want to change the
 
 Options 3 and 4 were our approaches to tuning the threshold of this model.  
 
-Tuned Random Forest with new threshold (0.46) achieved 85.9 % F1-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal and 7 customers have tendency to churn.
+Tuned Random Forest with new threshold (0.46) achieved 81.3 % F2-score with RM 323.75 loss. 35 fraud transactions were misclassified as normal and 7 customers have tendency to churn.
   - 19 % decrease in money loss (RM 397.75 ---> RM 323.75)
