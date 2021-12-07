@@ -1,5 +1,5 @@
 ## PROBLEM STATEMENT
-We want to reduce misclassification of fraud and normal transactions.
+We want to build a predictive model that can detect any fraud transactions. At the same time, we want to reduce misclassification of fraud and normal transactions.
   - Any fraud transactions being misclassified as normal is considered as false negatives. We will lose money.
   - Any normal transactions being misclassified as fraud is considered as false positives. Customer might stop using our products/services and move to other platforms.
 
