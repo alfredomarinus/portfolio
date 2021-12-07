@@ -8,7 +8,7 @@ We want to build a predictive model that can detect any fraud transactions. At t
 <p align="center">
   <img src="https://latex.codecogs.com/svg.image?\mathrm{F2-score=5*\frac{Precision&space;*&space;Recall}{4*Precision&space;&plus;&space;Recall}}" title="\mathrm{F2-score=5*\frac{Precision * Recall}{4*Precision + Recall}}" />
 </p>
-
+I used F-2 score instead of F-1 score because recall has a higher weight than precision. Money loss (fraud cost) is a critical metric here.
 
 ## ATTRIBUTE INFORMATION
 - **Time** : Number of seconds elapsed between this transaction and the first transaction
