@@ -17,7 +17,7 @@ I used F-2 score instead of F-1 score because recall has a higher weight than pr
 - **Class**	: 1 (Fraud) and 0 (Normal) 
 
 
-**NUMBER OF ROWS**: 284, 807
+**NUMBER OF ROWS**: 284,807
 
 ## DATASET
 <table border="1" class="dataframe">
