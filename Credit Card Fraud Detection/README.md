@@ -374,7 +374,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 ### 3. Model training and evaluation (baseline)
 Since Random Forest has a much better performance, we used it for further development. We trained it using the training set and evaluated it using the test set.  
 
-Random Forest with normal threshold (0.5) achieved 77.0 % F2-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal and 7 customers have tendency to churn.  
+Random Forest achieved 77.0 % F2-score with RM 397.75 loss. 43 fraud transactions were misclassified as normal and 7 customers have tendency to churn.  
 
 ### 4. Hyperparameter tuning using Bayesian Optimization
 None ---> 10 (max_depth)  
@@ -383,7 +383,7 @@ None ---> 10 (max_depth)
 100 ---> 262 (n_estimators)  
 
 ### 5. Model training and evaluation (tuned)
-Tuned Random Forest with normal threshold (0.5) achieved 78.6 % F2-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal and 7 customers have tendency to churn.
+Tuned Random Forest achieved 78.6 % F2-score with RM 370.00 loss. 40 fraud transactions are misclassified as normal and 7 customers have tendency to churn.
   - 7 % decrease in money loss (RM 397.75 ---> RM 370.00)  
 
 ## IMPLEMENTATION OF THRESHOLD ANALYSIS
