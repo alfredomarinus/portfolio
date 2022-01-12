@@ -264,7 +264,6 @@ I used F-2 score instead of F-1 score because recall has a higher weight than pr
     </tr>
   </tbody>
 </table>
-</div>
 
 ## DISTRIBUTION OF AMOUNT OF FRAUD TRANSACTIONS
 <p align="center">
