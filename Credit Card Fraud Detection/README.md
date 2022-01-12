@@ -283,7 +283,7 @@ This dataset is imbalanced. Only 0.2 % are fraud transactions. The average amoun
 
 ### 2. Cross-validation
   - 5-fold cross-validation was done to estimate the performance of six different machine learning models on unseen data.
-  - Random Forest achieved the highest F2-score, followed by K-Nearest Neighbors, Support Vector Machines and so on.
+  - Random Forest achieved the highest F2-score, followed by K-Nearest Neighbors, Decision Tree and so on.
   - Naive Bayes had the least money loss, but it could not compensate with its high number of false positives. Customers have tendency to stop using our products/services. This can affect our customer life value (CLV).
 
 <table border="1" class="dataframe">
