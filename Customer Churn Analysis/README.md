@@ -4,7 +4,7 @@ We want to classify customers into several categories based on their probability
   - Medium risk customer if churn probability is between 60 % and 79 %
   - Low risk customer if churn probability is less than 60 %  
 
-We also want to know features that contribute to this churn.  
+We also want to know which features contribute to this churn.  
 
 ## ATTRIBUTE INFORMATION
 - **RowNumber**: Row Numbers from 1 to 10000
